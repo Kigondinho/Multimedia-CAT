@@ -1,0 +1,180 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f5f4ef;
+  color: #1a1a18;
+  padding: 1.5rem 1rem;
+  min-height: 100vh;
+}
+
+.page-wrapper {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.site-header {
+  background: #e8e7e0;
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 0.5px solid rgba(0,0,0,0.12);
+}
+
+.leaf-icon {
+  width: 40px; height: 40px;
+  background: #085041;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 500;
+  color: #085041;
+  line-height: 1.2;
+}
+
+h1 span {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: #5f5e5a;
+  margin-top: 2px;
+}
+
+/* ── Video card ── */
+.video-card {
+  background: #ffffff;
+  border: 0.5px solid rgba(0,0,0,0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #04342c;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ── Description ── */
+.video-meta {
+  padding: 1rem 1.25rem 1.25rem;
+  border-top: 0.5px solid rgba(0,0,0,0.08);
+}
+
+.video-meta h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1a18;
+  margin-bottom: 6px;
+}
+
+.video-meta p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #5f5e5a;
+}
+
+/* ── Controls bar ── */
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  align-items: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  border: 0.5px solid rgba(0,0,0,0.22);
+  background: #ffffff;
+  color: #1a1a18;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.btn:hover { background: #e8e7e0; }
+.btn:active { transform: scale(0.97); }
+.btn:focus-visible { outline: 2px solid #1D9E75; outline-offset: 2px; }
+
+.btn-primary {
+  background: #085041;
+  color: #E1F5EE;
+  border-color: #085041;
+}
+.btn-primary:hover { background: #0F6E56; }
+
+.btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+/* ── Status badge ── */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: #e8e7e0;
+  color: #5f5e5a;
+  border: 0.5px solid rgba(0,0,0,0.12);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #888;
+  transition: background 0.2s;
+}
+.dot.playing { background: #1D9E75; }
+
+/* ── Accessibility note ── */
+.a11y-note {
+  background: #E1F5EE;
+  border: 0.5px solid #5DCAA5;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 13px;
+  color: #085041;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.a11y-note svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 1px; }
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  h1 { font-size: 20px; }
+  .controls { flex-direction: column; align-items: stretch; }
+  .btn { width: 100%; justify-content: center; }
+  .status-badge { margin-left: 0; width: 100%; justify-content: center; }
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
